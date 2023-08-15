@@ -5,7 +5,8 @@ import viewsRouter from './routes/views.router.js'
 import {Server} from 'socket.io'
 
 const app = express()
-const httpServer = app.listen(8080,()=> console.log('Listening on PORT 8080'))
+const PORT = process.env.PORT || 8080
+const httpServer = app.listen(PORT,()=> console.log(`Listening port ${PORT}`))
 
 const io = new Server(httpServer)
 
